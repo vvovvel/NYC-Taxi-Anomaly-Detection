@@ -6,3 +6,5 @@ altair
 pyarrow
 fastparquet
 jupyterlab
+matplotlib
+seaborn
