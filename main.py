@@ -2,9 +2,7 @@ import os
 import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-import umap  # Biblioteka umap-learn
-
-# Importy zgodnie z Twoją nową strukturą (plik visualization.py w folderze utils)
+import umap
 from utils.preprocessing.preprocess_yellow import preprocess_yellow, sample_data, scale_data
 from utils.visualization import plot_altair
 
