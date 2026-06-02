@@ -6,3 +6,4 @@ altair
 pyarrow
 fastparquet
 jupyterlab
+umap-learn

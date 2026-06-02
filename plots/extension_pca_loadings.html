@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-e569a30156f98c9890bbadf51a2e1e24"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "component", "title": "PCA component", "type": "nominal"}, "tooltip": [{"field": "feature", "type": "nominal"}, {"field": "component", "type": "nominal"}, {"field": "loading", "format": ".3f", "type": "quantitative"}, {"field": "abs_loading", "format": ".3f", "type": "quantitative"}], "x": {"field": "loading", "title": "Loading value", "type": "quantitative"}, "y": {"field": "feature", "sort": "-x", "title": "Feature", "type": "nominal"}}, "height": 500, "title": "Najwa\u017cniejsze cechy wp\u0142ywaj\u0105ce na PC1 i PC2", "width": 750, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-e569a30156f98c9890bbadf51a2e1e24": [{"feature": "trip_distance", "component": "PC1", "loading": 0.3094189517756946, "abs_loading": 0.3094189517756946}, {"feature": "fare_amount", "component": "PC1", "loading": 0.29788937039217134, "abs_loading": 0.29788937039217134}, {"feature": "tip_amount", "component": "PC1", "loading": 0.1855792687484341, "abs_loading": 0.1855792687484341}, {"feature": "tolls_amount", "component": "PC1", "loading": 0.25517023308334463, "abs_loading": 0.25517023308334463}, {"feature": "congestion_surcharge", "component": "PC1", "loading": -0.19518747272160492, "abs_loading": 0.19518747272160492}, {"feature": "Airport_fee", "component": "PC1", "loading": 0.2714781119273659, "abs_loading": 0.2714781119273659}, {"feature": "duration", "component": "PC1", "loading": 0.24190585744193388, "abs_loading": 0.24190585744193388}, {"feature": "PU_Manhattan", "component": "PC1", "loading": -0.2854544408777946, "abs_loading": 0.2854544408777946}, {"feature": "PU_Queens", "component": "PC1", "loading": 0.27935979371862946, "abs_loading": 0.27935979371862946}, {"feature": "DO_Brooklyn", "component": "PC1", "loading": 0.12299912763558775, "abs_loading": 0.12299912763558775}, {"feature": "DO_EWR", "component": "PC1", "loading": 0.09234981262691608, "abs_loading": 0.09234981262691608}, {"feature": "DO_Manhattan", "component": "PC1", "loading": -0.20906105508441394, "abs_loading": 0.20906105508441394}, {"feature": "DO_Queens", "component": "PC1", "loading": 0.11943054004113791, "abs_loading": 0.11943054004113791}, {"feature": "speed_mph", "component": "PC1", "loading": 0.2423949933589402, "abs_loading": 0.2423949933589402}, {"feature": "fare_per_mile", "component": "PC1", "loading": 0.0234421192157237, "abs_loading": 0.0234421192157237}, {"feature": "fare_per_minute", "component": "PC1", "loading": 0.07293775379827618, "abs_loading": 0.07293775379827618}, {"feature": "has_toll", "component": "PC1", "loading": 0.2557178757984026, "abs_loading": 0.2557178757984026}, {"feature": "has_airport_fee", "component": "PC1", "loading": 0.27277975446685465, "abs_loading": 0.27277975446685465}, {"feature": "same_borough", "component": "PC1", "loading": -0.29195041185118403, "abs_loading": 0.29195041185118403}, {"feature": "trip_distance", "component": "PC2", "loading": -0.03272968717029171, "abs_loading": 0.03272968717029171}, {"feature": "fare_amount", "component": "PC2", "loading": 0.002375142396431742, "abs_loading": 0.002375142396431742}, {"feature": "tip_amount", "component": "PC2", "loading": 0.011120508206581569, "abs_loading": 0.011120508206581569}, {"feature": "tolls_amount", "component": "PC2", "loading": -0.02054352963082266, "abs_loading": 0.02054352963082266}, {"feature": "congestion_surcharge", "component": "PC2", "loading": -0.009945982321012377, "abs_loading": 0.009945982321012377}, {"feature": "Airport_fee", "component": "PC2", "loading": -0.017891138973579933, "abs_loading": 0.017891138973579933}, {"feature": "duration", "component": "PC2", "loading": -0.040196973198112905, "abs_loading": 0.040196973198112905}, {"feature": "PU_Manhattan", "component": "PC2", "loading": -0.0005225609677036826, "abs_loading": 0.0005225609677036826}, {"feature": "PU_Queens", "component": "PC2", "loading": -0.017453898295634193, "abs_loading": 0.017453898295634193}, {"feature": "DO_Brooklyn", "component": "PC2", "loading": 0.020470372510597704, "abs_loading": 0.020470372510597704}, {"feature": "DO_EWR", "component": "PC2", "loading": -0.0033002545375711177, "abs_loading": 0.0033002545375711177}, {"feature": "DO_Manhattan", "component": "PC2", "loading": -0.008341844193041171, "abs_loading": 0.008341844193041171}, {"feature": "DO_Queens", "component": "PC2", "loading": -0.006084068408916772, "abs_loading": 0.006084068408916772}, {"feature": "speed_mph", "component": "PC2", "loading": -0.01853608096585752, "abs_loading": 0.01853608096585752}, {"feature": "fare_per_mile", "component": "PC2", "loading": 0.9267794123798376, "abs_loading": 0.9267794123798376}, {"feature": "fare_per_minute", "component": "PC2", "loading": 0.36347691538740096, "abs_loading": 0.36347691538740096}, {"feature": "has_toll", "component": "PC2", "loading": -0.022784485271738843, "abs_loading": 0.022784485271738843}, {"feature": "has_airport_fee", "component": "PC2", "loading": -0.01814160897430996, "abs_loading": 0.01814160897430996}, {"feature": "same_borough", "component": "PC2", "loading": 0.025479410451989593, "abs_loading": 0.025479410451989593}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
