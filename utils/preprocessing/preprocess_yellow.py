@@ -67,10 +67,8 @@ def preprocess_yellow(df, lookup_path="../data/taxi_zone_lookup.csv"):
     df = df.rename(columns={'Borough': 'DO_Borough'}).drop(columns=['LocationID'])
 
     categorical_cols = ['PU_Borough', 'DO_Borough']
-    df_dummies = pd.get_dummies(df[categorical_cols], prefix=['PU', 'DO'], dtype='int8')
-    df = pd.concat([df, df_dummies], axis=1)
+    df = pd.get_dummies(df, columns=categorical_cols, prefix=['PU', 'DO'], dtype='int8')
 
-    # Usunięcie identyfikatorów stref, ale zachowanie nazw tekstowych (PU_Borough, DO_Borough)
     df = df.drop(columns=['PULocationID', 'DOLocationID'])
 
     return df
@@ -88,8 +86,9 @@ def sample_data(df, n_samples=25000, random_state=42):
 def scale_data(df_sample):
     """
     Wyodrębnia cechy numeryczne i poddaje je standaryzacji (StandardScaler).
+    Zwraca obiekt DataFrame z przeskalowanymi danymi oraz dopasowany obiekt scalera.
     """
-    # MUSIMY wykluczyć PU_Borough i DO_Borough, bo to tekst (stringi)
+    # Wykluczenie cech niebędących ciągłymi zmiennymi geometrycznymi lub finansowymi.
     exclude_cols = [
         'tpep_pickup_datetime',
         'tpep_dropoff_datetime',
@@ -97,18 +96,14 @@ def scale_data(df_sample):
         'pickup_day_of_week',
         'total_amount',
         'RatecodeID',
-        'payment_type',
-        'PU_Borough',
-        'DO_Borough'
+        'payment_type'
     ]
-
-    # Tylko kolumny, których nie ma na liście wykluczeń, trafią do skalowania
     feature_cols = [col for col in df_sample.columns if col not in exclude_cols]
 
     scaler = StandardScaler()
     X_scaled_array = scaler.fit_transform(df_sample[feature_cols])
 
-    # Tworzymy DataFrame z zachowaniem nazw kolumn i indeksów
+    # Tworzymy DataFrame z zachowaniem nazw kolumn i indeksów powiązanych z df_sample
     X_scaled_df = pd.DataFrame(X_scaled_array, columns=feature_cols, index=df_sample.index)
 
     return X_scaled_df, scaler

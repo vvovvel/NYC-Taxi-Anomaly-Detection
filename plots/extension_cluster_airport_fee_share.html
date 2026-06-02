@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-d8fa211fb1b95ef5f0ea5c65335d384c"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "cluster", "type": "nominal"}, {"field": "number_of_trips", "type": "quantitative"}, {"field": "trip_distance_mean", "type": "quantitative"}, {"field": "duration_mean", "type": "quantitative"}, {"field": "fare_amount_mean", "type": "quantitative"}, {"field": "total_amount_mean", "type": "quantitative"}, {"field": "speed_mph_mean", "type": "quantitative"}, {"field": "fare_per_mile_mean", "type": "quantitative"}, {"field": "fare_per_minute_mean", "type": "quantitative"}, {"field": "tip_rate_mean", "type": "quantitative"}, {"field": "toll_share", "type": "quantitative"}, {"field": "airport_fee_share", "type": "quantitative"}, {"field": "same_borough_share", "type": "quantitative"}, {"field": "weekend_share", "type": "quantitative"}, {"field": "rush_hour_share", "type": "quantitative"}, {"field": "dominant_pickup_borough", "type": "nominal"}, {"field": "dominant_dropoff_borough", "type": "nominal"}], "x": {"field": "cluster", "title": "Cluster", "type": "nominal"}, "y": {"field": "airport_fee_share", "title": "Airport fee share", "type": "quantitative"}}, "height": 350, "title": "Airport fee share by cluster", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-d8fa211fb1b95ef5f0ea5c65335d384c": [{"cluster": "0", "number_of_trips": 4125, "trip_distance_mean": 1.8228267431259155, "duration_mean": 12.51754379272461, "fare_amount_mean": 13.324557304382324, "total_amount_mean": 21.527324676513672, "speed_mph_mean": 8.98336410522461, "fare_per_mile_mean": 8.802042007446289, "fare_per_minute_mean": 1.1664783954620361, "tip_rate_mean": 0.23561501502990723, "toll_share": 0.0009696969696969697, "airport_fee_share": 0.0, "same_borough_share": 0.9975757575757576, "weekend_share": 0.25842424242424245, "rush_hour_share": 0.32242424242424245, "dominant_pickup_borough": "Manhattan", "dominant_dropoff_borough": "Manhattan"}, {"cluster": "1", "number_of_trips": 1, "trip_distance_mean": 2.0199999809265137, "duration_mean": 6.0333333015441895, "fare_amount_mean": 10.0, "total_amount_mean": 15.0, "speed_mph_mean": 20.088397979736328, "fare_per_mile_mean": 4.95049524307251, "fare_per_minute_mean": 1.6574585437774658, "tip_rate_mean": 0.25, "toll_share": 0.0, "airport_fee_share": 0.0, "same_borough_share": 1.0, "weekend_share": 1.0, "rush_hour_share": 0.0, "dominant_pickup_borough": "Staten Island", "dominant_dropoff_borough": "Staten Island"}, {"cluster": "2", "number_of_trips": 1, "trip_distance_mean": 0.019999999552965164, "duration_mean": 2.0333333015441895, "fare_amount_mean": 95.0, "total_amount_mean": 115.19999694824219, "speed_mph_mean": 0.5901639461517334, "fare_per_mile_mean": 4750.0, "fare_per_minute_mean": 46.7213134765625, "tip_rate_mean": 0.20210526883602142, "toll_share": 0.0, "airport_fee_share": 0.0, "same_borough_share": 1.0, "weekend_share": 0.0, "rush_hour_share": 0.0, "dominant_pickup_borough": "Brooklyn", "dominant_dropoff_borough": "Brooklyn"}, {"cluster": "3", "number_of_trips": 431, "trip_distance_mean": 13.317471504211426, "duration_mean": 37.35614776611328, "fare_amount_mean": 57.22389602661133, "total_amount_mean": 79.40985870361328, "speed_mph_mean": 23.13730812072754, "fare_per_mile_mean": 4.629408836364746, "fare_per_minute_mean": 1.7518115043640137, "tip_rate_mean": 0.1727110594511032, "toll_share": 0.5591647331786543, "airport_fee_share": 0.91415313225058, "same_borough_share": 0.1716937354988399, "weekend_share": 0.308584686774942, "rush_hour_share": 0.2668213457076566, "dominant_pickup_borough": "Queens", "dominant_dropoff_borough": "Manhattan"}, {"cluster": "4", "number_of_trips": 442, "trip_distance_mean": 8.505000114440918, "duration_mean": 40.3329963684082, "fare_amount_mean": 36.83122253417969, "total_amount_mean": 46.61275863647461, "speed_mph_mean": 13.878952980041504, "fare_per_mile_mean": 5.140939712524414, "fare_per_minute_mean": 1.093238115310669, "tip_rate_mean": 0.11383441835641861, "toll_share": 0.27601809954751133, "airport_fee_share": 0.0, "same_borough_share": 0.15610859728506787, "weekend_share": 0.23529411764705882, "rush_hour_share": 0.2895927601809955, "dominant_pickup_borough": "Manhattan", "dominant_dropoff_borough": "Brooklyn"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

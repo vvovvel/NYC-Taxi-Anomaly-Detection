@@ -19,6 +19,3 @@ ENV/
 
 .env
 .DS_Store
-
-plots/
-*.html
